@@ -1,0 +1,10 @@
+{
+    "title": "E-Commerce",
+    "description": "A full-featured online store with payment integration and dashboard.",
+    "tags": [
+        "React",
+        "Node.js"
+    ],
+    "gradient": "gradient-1",
+    "link": "#"
+}

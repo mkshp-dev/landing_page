@@ -3,18 +3,6 @@
     --text-primary: #ffffff;
     --text-secondary: #a0a0b0;
     --accent-primary: #6d28d9;
-    /* Violet */
-    --accent-secondary: #06b6d4;
-    /* Cyan */
-    --glass-bg: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --font-main: 'Outfit', sans-serif;
-    --transition: all 0.3s ease;
-}
-
-* {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 

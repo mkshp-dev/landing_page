@@ -1,4 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Theme Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+    });
+
     // Mobile Navigation Toggle
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
@@ -110,4 +124,47 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     `;
     document.head.appendChild(styleSheet);
+
+    // Dynamic Project Loading
+    const projectsGrid = document.getElementById('projects-grid');
+
+    if (projectsGrid) {
+        fetch('projects/index.json')
+            .then(response => response.json())
+            .then(projectFiles => {
+                projectFiles.forEach(file => {
+                    fetch(`projects / ${file} `)
+                        .then(response => response.json())
+                        .then(project => {
+                            const card = document.createElement('article');
+                            card.className = 'project-card glass';
+                            card.innerHTML = `
+        < div class="project-image" >
+            <div class="placeholder-img ${project.gradient}"></div>
+                                </div >
+        <div class="project-content">
+            <h3>${project.title}</h3>
+            <p>${project.description}</p>
+            <div class="tags">
+                ${project.tags.map(tag => `<span>${tag}</span>`).join('')}
+            </div>
+            <a href="${project.link}" class="link-arrow">View Project &rarr;</a>
+        </div>
+    `;
+
+                            // Add animation styles initially hidden
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+                            card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+
+                            projectsGrid.appendChild(card);
+
+                            // Observe the new card
+                            observer.observe(card);
+                        })
+                        .catch(err => console.error('Error loading project:', err));
+                });
+            })
+            .catch(err => console.error('Error loading project list:', err));
+    }
 });

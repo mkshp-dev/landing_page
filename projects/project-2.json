@@ -1,0 +1,10 @@
+{
+    "title": "Task Management App",
+    "description": "Productivity tool for teams with real-time updates and collaboration.",
+    "tags": [
+        "Vue",
+        "Firebase"
+    ],
+    "gradient": "gradient-2",
+    "link": "#"
+}
