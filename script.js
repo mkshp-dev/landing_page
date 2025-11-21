@@ -5,42 +5,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.documentElement.setAttribute('data-theme', savedTheme);
 
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-    });
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    }
 
     // Mobile Navigation Toggle
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     const links = document.querySelectorAll('.nav-links li');
 
-    hamburger.addEventListener('click', () => {
-        // Toggle Nav
-        navLinks.classList.toggle('active');
-        hamburger.classList.toggle('toggle');
+    if (hamburger) {
+        hamburger.addEventListener('click', () => {
+            // Toggle Nav
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('toggle');
 
-        // Animate Links
-        links.forEach((link, index) => {
-            if (link.style.animation) {
-                link.style.animation = '';
-            } else {
-                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-            }
+            // Animate Links
+            links.forEach((link, index) => {
+                if (link.style.animation) {
+                    link.style.animation = '';
+                } else {
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                }
+            });
         });
-    });
+    }
 
     // Close mobile menu when clicking a link
-    links.forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            hamburger.classList.remove('toggle');
-            links.forEach(l => l.style.animation = '');
+    if (links) {
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('toggle');
+                links.forEach(l => l.style.animation = '');
+            });
         });
-    });
+    }
 
     // Scroll Animations (Intersection Observer)
     const observerOptions = {
