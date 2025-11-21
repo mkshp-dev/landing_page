@@ -133,15 +133,15 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(response => response.json())
             .then(projectFiles => {
                 projectFiles.forEach(file => {
-                    fetch(`projects / ${file} `)
+                    fetch(`projects/${file}`)
                         .then(response => response.json())
                         .then(project => {
                             const card = document.createElement('article');
                             card.className = 'project-card glass';
                             card.innerHTML = `
-        < div class="project-image" >
-            <div class="placeholder-img ${project.gradient}"></div>
-                                </div >
+                                <div class="project-image">
+                                    <div class="placeholder-img ${project.gradient}"></div>
+                                </div>
         <div class="project-content">
             <h3>${project.title}</h3>
             <p>${project.description}</p>
@@ -162,9 +162,23 @@ document.addEventListener('DOMContentLoaded', () => {
                             // Observe the new card
                             observer.observe(card);
                         })
-                        .catch(err => console.error('Error loading project:', err));
+                        .catch(err => {
+                            console.error('Error loading project:', err);
+                            projectsGrid.innerHTML += `<p style="color: red;">Error loading project: ${err.message}</p>`;
+                        });
                 });
             })
-            .catch(err => console.error('Error loading project list:', err));
+            .catch(err => {
+                console.error('Error loading project list:', err);
+                projectsGrid.innerHTML = `
+                    <div style="text-align: center; width: 100%; padding: 2rem;">
+                        <p style="color: var(--text-secondary);">Unable to load projects.</p>
+                        <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.5rem;">
+                            Note: If you are opening this file directly (file://), dynamic loading may be blocked by browser security.
+                            Try using a local server (e.g., VS Code Live Server or 'python -m http.server').
+                        </p>
+                    </div>
+                `;
+            });
     }
 });

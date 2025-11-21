@@ -410,24 +410,6 @@ pre {
     }
 
     .nav-links {
-        display: none;
-        /* Add JS toggle later */
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    .hamburger span {
-        display: block;
-        width: 25px;
-        height: 3px;
-        background: white;
-        margin: 5px 0;
-    }
-
-    .footer .container {
-        flex-direction: column;
         gap: 1.5rem;
     }
 }
