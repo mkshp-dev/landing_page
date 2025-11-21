@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Portfolio</title>
+    <meta name="description" content="Portfolio of a passionate developer building modern web experiences.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-glow"></div>
+    
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">Dev.</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact" class="btn-primary">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="badge">Available for hire</span>
+                    <h1 class="hero-title">Building digital <span class="gradient-text">experiences</span> that matter.</h1>
+                    <p class="hero-subtitle">I'm a Full Stack Developer passionate about creating beautiful, functional, and user-centered digital products.</p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn-primary">View Work</a>
+                        <a href="#contact" class="btn-secondary">Contact Me</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="code-card glass">
+                        <div class="code-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="code-content">
+                            <pre><code><span class="keyword">const</span> <span class="variable">developer</span> = {
+  <span class="property">name</span>: <span class="string">'Your Name'</span>,
+  <span class="property">role</span>: <span class="string">'Full Stack Dev'</span>,
+  <span class="property">skills</span>: [<span class="string">'React'</span>, <span class="string">'Node'</span>, <span class="string">'Design'</span>],
+  <span class="property">hardWorker</span>: <span class="boolean">true</span>
+};</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills">
+            <div class="container">
+                <h2 class="section-title">Tech Stack</h2>
+                <div class="skills-grid">
+                    <div class="skill-card glass">
+                        <h3>Frontend</h3>
+                        <p>React, Vue, TypeScript, Tailwind CSS</p>
+                    </div>
+                    <div class="skill-card glass">
+                        <h3>Backend</h3>
+                        <p>Node.js, Python, Go, PostgreSQL</p>
+                    </div>
+                    <div class="skill-card glass">
+                        <h3>Tools</h3>
+                        <p>Git, Docker, AWS, Figma</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <article class="project-card glass">
+                        <div class="project-image">
+                            <!-- Placeholder for project image -->
+                            <div class="placeholder-img gradient-1"></div>
+                        </div>
+                        <div class="project-content">
+                            <h3>E-Commerce Platform</h3>
+                            <p>A full-featured online store with payment integration and dashboard.</p>
+                            <div class="tags">
+                                <span>React</span>
+                                <span>Node.js</span>
+                            </div>
+                            <a href="#" class="link-arrow">View Project &rarr;</a>
+                        </div>
+                    </article>
+                    <!-- Project 2 -->
+                    <article class="project-card glass">
+                        <div class="project-image">
+                            <div class="placeholder-img gradient-2"></div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Task Management App</h3>
+                            <p>Productivity tool for teams with real-time updates and collaboration.</p>
+                            <div class="tags">
+                                <span>Vue</span>
+                                <span>Firebase</span>
+                            </div>
+                            <a href="#" class="link-arrow">View Project &rarr;</a>
+                        </div>
+                    </article>
+                    <!-- Project 3 -->
+                    <article class="project-card glass">
+                        <div class="project-image">
+                            <div class="placeholder-img gradient-3"></div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Portfolio V1</h3>
+                            <p>My previous portfolio site showcasing early web experiments.</p>
+                            <div class="tags">
+                                <span>HTML/CSS</span>
+                                <span>JS</span>
+                            </div>
+                            <a href="#" class="link-arrow">View Project &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container contact-container glass">
+                <h2>Let's work together</h2>
+                <p>Have a project in mind? I'd love to hear about it.</p>
+                <a href="mailto:hello@example.com" class="btn-primary">Get in Touch</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Developer Portfolio. Built with &hearts;.</p>
+            <div class="social-links">
+                <a href="#">GitHub</a>
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
